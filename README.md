@@ -4,6 +4,8 @@
 
 ![球体轨迹拟合](resources/output.gif)
 
+![截图](resources/截图.png)
+
 ## 方法
 
 - **球检测**：HSV颜色空间掩码和轮廓查找在视频帧中检测球体
