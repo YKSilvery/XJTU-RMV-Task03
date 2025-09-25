@@ -1,0 +1,3 @@
+/home/yksilvery/ceres_project/build/CMakeFiles/ceres_app.dir
+/home/yksilvery/ceres_project/build/CMakeFiles/edit_cache.dir
+/home/yksilvery/ceres_project/build/CMakeFiles/rebuild_cache.dir
