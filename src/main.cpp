@@ -79,7 +79,7 @@ void processVideo(double& x0, double& y0, std::vector<std::tuple<double, double,
     while (cap.read(frame)) {
         double time = frameCount / fps;
 
-        // Only process every frame_skip-th frame for optimization
+        
         if (frameCount % frame_skip == 0) {
             auto [x, y] = detectBallPosition(frame);
 
@@ -134,7 +134,7 @@ void createVisualizationVideo(double x0, double y0, double vx, double vy, double
     int frameHeight = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
     int totalFrames = cap.get(cv::CAP_PROP_FRAME_COUNT);  // 获取总帧数
 
-    // Precompute the full trajectory
+    
     std::vector<cv::Point> trajectoryPoints;
     for (int i = 0; i < totalFrames; ++i) {
         double ti = i / fps;
@@ -149,10 +149,10 @@ void createVisualizationVideo(double x0, double y0, double vx, double vy, double
     int frameCount = 0;
 
     while (cap.read(frame)) {
-        // Detect ball and draw bounding box
+        
         auto [x_obs, y_obs] = detectBallPosition(frame);
 
-        // Draw the full fitted trajectory
+        
         if (trajectoryPoints.size() > 1) {
             for (size_t i = 1; i < trajectoryPoints.size(); ++i) {
                 cv::line(frame, trajectoryPoints[i-1], trajectoryPoints[i], cv::Scalar(255, 0, 0), 2);
@@ -191,7 +191,7 @@ int main() {
     double x0, y0;
     std::vector<std::tuple<double, double, double>> observations;
 
-    int frame_skip = 5;  // Process every 5th frame for optimization
+    int frame_skip = 5;  
     processVideo(x0, y0, observations, frame_skip);
 
     std::cout << "Collected " << observations.size() << " observations from sparse sampling." << std::endl;
@@ -201,7 +201,7 @@ int main() {
 
     std::cout << "vx: " << params[0] << " vy: " << params[1] << " g: " << params[2] << " k: " << params[3] << std::endl;
 
-    // Create visualization video
+    //可视化（可选）
     //createVisualizationVideo(x0, y0, params[0], params[1], params[2], params[3], 60.0);
 
     return 0;
