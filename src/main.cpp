@@ -123,7 +123,7 @@ void optimizeParameters(double x0, double y0, const std::vector<std::tuple<doubl
     std::cout << summary.BriefReport() << std::endl;
 }
 
-void createVisualizationVideo(double x0, double y0, double vx, double vy, double g, double k, double fps) {  //可视化函数
+void createVisualizationVideo(double x0, double y0, double vx, double vy, double g, double k, double fps) {  //可视化函数，如果看代码优雅性可以忽略这个函数
     cv::VideoCapture cap("resources/video.mp4", cv::CAP_FFMPEG);
     if (!cap.isOpened()) {
         std::cerr << "Error: Could not open video file." << std::endl;
