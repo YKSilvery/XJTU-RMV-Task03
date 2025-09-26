@@ -27,5 +27,5 @@ cd build
 cmake ..
 make
 cd ..
-./build/opencv_app
+./build/ceres_app
 ```
