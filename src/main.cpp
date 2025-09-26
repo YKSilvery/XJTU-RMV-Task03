@@ -202,7 +202,7 @@ int main() {
     std::cout << "vx: " << params[0] << " vy: " << params[1] << " g: " << params[2] << " k: " << params[3] << std::endl;
 
     // Create visualization video
-    createVisualizationVideo(x0, y0, params[0], params[1], params[2], params[3], 60.0);
+    //createVisualizationVideo(x0, y0, params[0], params[1], params[2], params[3], 60.0);
 
     return 0;
 }
