@@ -41,7 +41,7 @@ std::pair<double, double> detectBallPosition(const cv::Mat& frame) {  //检测�
         return {-1, -1};
     }
 
-    // 最大轮廓
+    // 最大轮廓（其实本来就只有一个轮廓，但是能增强鲁棒性）
     size_t maxIndex = 0;
     double maxArea = cv::contourArea(contours[0]);
     for (size_t i = 1; i < contours.size(); ++i) {
